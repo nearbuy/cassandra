@@ -49,7 +49,10 @@ public class Schema
      * ~64 characters, we could allow longer names than this, but on Windows, the entire path should be not greater than
      * 255 characters, so a lower limit here helps avoid problems.  See CASSANDRA-4110.
      */
-    public static final int NAME_LENGTH = 48;
+    // public static final int NAME_LENGTH = 48;
+
+    // NB
+    public static final int NAME_LENGTH = 127;
 
     /* metadata map for faster table lookup */
     private final Map<String, KSMetaData> tables = new NonBlockingHashMap<String, KSMetaData>();
